@@ -1,0 +1,22 @@
+server:
+  port: 9023
+
+logging:
+  config: ./config/log4j2.yml
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true # handler가 없을 경우 exception 발생
+    static-path-pattern: /static
+  web:
+    resources:
+      add-mappings: false # 404 error를 처리하기 위함
+
+# sensor 조회를 위한 정보
+sensor:
+  monitor:
+    auth-key: yNeEKewKWCsLkXrXLYMG
+    download-path: /Users/mj/Downloads
+    url: 
+      home: https://console.motorsense.io
+      datas: ${sensor.monitor.url.home}/api-v2/signals?key=${sensor.monitor.auth-key}&node_id={node_id}&started_at={started_at}&ended_at={ended_at}
