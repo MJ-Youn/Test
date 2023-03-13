@@ -15,7 +15,7 @@ spring:
 # sensor 조회를 위한 정보
 sensor:
   monitor:
-    auth-key: yNeEKewKWCsLkXrXLYMG
+    auth-key: ${{ secret.AUTH_KEY }}
     download-path: /Users/mj/Downloads
     url: 
       home: https://console.motorsense.io
